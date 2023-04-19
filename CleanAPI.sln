@@ -7,6 +7,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CleanAPI.Presentation", "Cl
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CleanAPI.Application", "CleanAPI.Application\CleanAPI.Application.csproj", "{F6E4D3D5-999F-4799-BD06-224E085B40DA}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CleanAPI.Domain", "CleanAPI.Domain\CleanAPI.Domain.csproj", "{ED0573D8-710B-421A-BB11-5064F4D2EE61}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CleanAPI.Infraestructure", "CleanAPI.Infraestructure\CleanAPI.Infraestructure.csproj", "{5685DE56-7653-4120-A3F8-7DDCCB23BDA8}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -24,5 +28,13 @@ Global
 		{F6E4D3D5-999F-4799-BD06-224E085B40DA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F6E4D3D5-999F-4799-BD06-224E085B40DA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F6E4D3D5-999F-4799-BD06-224E085B40DA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ED0573D8-710B-421A-BB11-5064F4D2EE61}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ED0573D8-710B-421A-BB11-5064F4D2EE61}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ED0573D8-710B-421A-BB11-5064F4D2EE61}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ED0573D8-710B-421A-BB11-5064F4D2EE61}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5685DE56-7653-4120-A3F8-7DDCCB23BDA8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5685DE56-7653-4120-A3F8-7DDCCB23BDA8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5685DE56-7653-4120-A3F8-7DDCCB23BDA8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5685DE56-7653-4120-A3F8-7DDCCB23BDA8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
