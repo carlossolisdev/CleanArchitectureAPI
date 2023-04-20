@@ -21,6 +21,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\CleanAPI.Application.UnitTests\CleanAPI.Application.UnitTests.csproj" />
     <ProjectReference Include="..\CleanAPI.Application\CleanAPI.Application.csproj" />
     <ProjectReference Include="..\CleanAPI.Domain\CleanAPI.Domain.csproj" />
     <ProjectReference Include="..\CleanAPI.Infraestructure\CleanAPI.Infraestructure.csproj" />

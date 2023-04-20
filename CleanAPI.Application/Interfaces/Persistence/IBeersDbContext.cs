@@ -6,6 +6,7 @@ namespace CleanAPI.Application.Interfaces.Persistence
     public interface IDbContext : IDisposable
     { 
         DbContext Instance { get; }
+        Task<int> SaveChangesAsync(CancellationToken cancellationToken);
     }
 
     public  interface IBeersDbContext : IDbContext

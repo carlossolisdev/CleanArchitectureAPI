@@ -4,7 +4,6 @@ using CleanAPI.Domain.Entities;
 using FluentValidation;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
-using System.Security.Cryptography.X509Certificates;
 
 namespace CleanAPI.Application.Features.Beers.Queries
 {
