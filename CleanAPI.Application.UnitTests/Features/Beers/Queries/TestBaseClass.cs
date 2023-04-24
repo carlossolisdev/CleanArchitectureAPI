@@ -1,7 +1,8 @@
-﻿using CleanAPI.Application.Interfaces.Persistence;
+﻿using AutoMapper;
+using CleanAPI.Application.Interfaces.Persistence;
 using CleanAPI.Infraestructure.Persistence.Beers;
 using Microsoft.EntityFrameworkCore;
-using NUnit.Framework;
+using static CleanAPI.Application.Features.Beers.Queries.BeerDto;
 
 namespace CleanAPI.Application.UnitTests.Features.Beers.Queries
 {
@@ -15,6 +16,12 @@ namespace CleanAPI.Application.UnitTests.Features.Beers.Queries
             var context = new BeersDbContext(options);
             context.Database.EnsureDeleted();
             return context;
+        }
+
+        protected IMapper GetMapper() {
+            var config = new MapperConfiguration(cfg => cfg.AddProfile<MapperClass>());
+            var mapper = config.CreateMapper();
+            return mapper;
         }
     }
 }

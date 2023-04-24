@@ -14,12 +14,12 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\CleanAPI.Application\CleanAPI.Application.csproj" />
-    <ProjectReference Include="..\CleanAPI.Infraestructure\CleanAPI.Infraestructure.csproj" />
+    <Folder Include="Features\Beers\Commands\" />
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Features\Beers\Commands\" />
+    <ProjectReference Include="..\CleanAPI.Application\CleanAPI.Application.csproj" />
+    <ProjectReference Include="..\CleanAPI.Infraestructure\CleanAPI.Infraestructure.csproj" />
   </ItemGroup>
 
 </Project>

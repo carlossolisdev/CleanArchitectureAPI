@@ -1,7 +1,7 @@
-﻿using CleanAPI.Application.Interfaces.Persistence;
+﻿using AutoMapper;
+using CleanAPI.Application.Features.Beers.Queries;
+using CleanAPI.Application.Interfaces.Persistence;
 using CleanAPI.Domain.Entities;
-using CleanAPI.Infraestructure.Persistence.Beers;
-using Microsoft.EntityFrameworkCore;
 using NUnit.Framework;
 
 namespace CleanAPI.Application.UnitTests.Features.Beers.Queries
@@ -10,11 +10,12 @@ namespace CleanAPI.Application.UnitTests.Features.Beers.Queries
     public class GetBeersListQueryHandlerTest : TestBaseClass
     {
         public IBeersDbContext _context;
+        public IMapper _mapper;
 
         [SetUp]
         public async Task SetUp() 
         {
-            // Create clean db
+            _mapper = GetMapper();
             _context = GetContext();
 
             // Seed data for tests
@@ -38,10 +39,33 @@ namespace CleanAPI.Application.UnitTests.Features.Beers.Queries
         }
 
         [Test]
-        public async Task GetBeersList()
+        public async Task Beers_RetrieveVmsList_WhenExistsDataInTheDb()
         {
-            var res = await _context.Beers.ToListAsync();
-            Assert.IsTrue(res.Count == 1);
+            // Arrange
+            var query = new GetBeersListQuery();
+            var handler = new GetBeersListQueryHandler(_context, _mapper);
+
+            // Act
+            var res = await handler.Handle(query, CancellationToken.None);
+
+            // Assert
+            Assert.IsTrue(res.Beers.Count > 0);
+        }
+
+        [Test]
+        public async Task Beers_RetrieveEmptyList_WhenDoesntExistsData()
+        {
+            // Arrange
+            _context = GetContext();
+            var query = new GetBeersListQuery();
+            var handler = new GetBeersListQueryHandler(_context, _mapper);
+
+            // Act
+            var res = await handler.Handle(query, CancellationToken.None);
+
+            // Assert
+            Assert.IsTrue(res.Beers.Count == 0);
         }
     }
 }
+
