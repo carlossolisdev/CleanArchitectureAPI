@@ -1,4 +1,5 @@
-﻿using CleanAPI.Application.Features.Beers.Queries;
+﻿using CleanAPI.Application.Features.Beers.Commands;
+using CleanAPI.Application.Features.Beers.Queries;
 using MediatR;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -20,6 +21,13 @@ namespace CleanAPI.Presentation.Controllers
         public async Task<ActionResult<GetBeersListQueryVm>> Get()
         {
             var result = await _mediator.Send(new GetBeersListQuery());
+            return Ok(result);
+        }
+
+        [HttpPost]
+        public async Task<ActionResult<CreateBeerCommandVm>> Post([FromBody] CreateBeerCommand command)
+        {
+            var result = await _mediator.Send(command);
             return Ok(result);
         }
     }
