@@ -4,7 +4,7 @@ using CleanAPI.Infraestructure.Persistence.Beers;
 using Microsoft.EntityFrameworkCore;
 using static CleanAPI.Application.Features.Beers.Queries.BeerDto;
 
-namespace CleanAPI.Application.UnitTests.Features.Beers.Queries
+namespace CleanAPI.Application.UnitTests
 {
     public class TestBaseClass
     {
@@ -18,7 +18,8 @@ namespace CleanAPI.Application.UnitTests.Features.Beers.Queries
             return context;
         }
 
-        protected IMapper GetMapper() {
+        protected IMapper GetMapper()
+        {
             var config = new MapperConfiguration(cfg => cfg.AddProfile<MapperClass>());
             var mapper = config.CreateMapper();
             return mapper;

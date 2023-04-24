@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using CleanAPI.Application.Exceptions;
 using CleanAPI.Application.Interfaces.Persistence;
 using CleanAPI.Domain.Entities;
 using FluentValidation;
@@ -65,13 +66,13 @@ namespace CleanAPI.Application.Features.Beers.Commands
             if (!result.IsValid) {
                 string errors = "";
                 result.Errors.ForEach(x => errors += $"{x.ErrorMessage} ");
-                throw new Exception(errors);
+                throw new BadRequestException(errors);
             }
 
             var entity = _mapper.Map<Beer>(request);
             _context.Beers.Add(entity);
-            var vm = _mapper.Map<CreateBeerCommandVm>(entity);
             await _context.SaveChangesAsync(cancellationToken);
+            var vm = _mapper.Map<CreateBeerCommandVm>(entity);
             return vm;
         }
     }
