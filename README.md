@@ -2,7 +2,7 @@
 
 ---
 
-To run de project is necesary to have a database. This project is a code-first with entity framework. And below is described how to add a migration and update the database.
+To run de project is necesary to have a database. This project is code-first with entity framework. Below is described how to add a migration and update the database.
 
 - **Database is running on Sql Server**
 
